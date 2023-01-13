@@ -22,7 +22,7 @@ img {
 
 @font-face {
 font-family: "Open Sans";
-src: url("fonts/OpenSans-Bold.woff2"), url("fonts/OpenSans-Bold.woff");
+src: url("../fonts/OpenSans-Bold.woff2"), url("../fonts/OpenSans-Bold.woff");
 font-weight: 700;
 font-style: normal;
 font-display: swap;
@@ -30,7 +30,7 @@ font-display: swap;
 
 @font-face {
 font-family: "Open Sans";
-src: url("fonts/OpenSans-Regular.woff2"), url("fonts/OpenSans-Regular.woff");
+src: url("../fonts/OpenSans-Regular.woff2"), url("../fonts/OpenSans-Regular.woff");
 font-weight: 400;
 font-style: normal;
 font-display: swap;
@@ -47,10 +47,8 @@ font-display: swap;
   overflow: hidden;
 }
 
-
 .header {
   position: relative;
-  min-height: 634px;
   background-image: url("../images/banner-mobile.jpg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -60,7 +58,6 @@ font-display: swap;
 @media (min-width: 641px) and (max-width: 1200px) {
   .header {
     position: relative;
-    min-height: 388px;
     background-image: url("../images/banner-bg-tablet.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -71,11 +68,11 @@ font-display: swap;
 @media (min-width: 1201px) {
   .header {
     position: relative;
-    min-height: 448px;
     background-image: url("../images/banner-bg.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    min-width: 1201px;
   }
 }
 
@@ -88,21 +85,6 @@ font-display: swap;
   bottom: 0;
   background-color: #000000;
   opacity: 0.6;
-}
-
-.mobile_header_button {
-  position: absolute;
-  z-index: 2;
-  right: 18px;
-  top: 36px;
-  width: 30px;
-  background-color: transparent;
-}
-
-@media (min-width: 641px) {
-  .mobile_header_button {
-    display: none;
-  }
 }
 
 .container_header {
@@ -120,7 +102,7 @@ font-display: swap;
   .container_header {
     position: relative;
     z-index: 2;
-    min-height: 550px;
+    min-height: 388px;
     padding: 55px 4.7%;
     display: block;
   }
@@ -129,8 +111,18 @@ font-display: swap;
 @media (min-width: 1201px) {
   .container_header {
     display: block;
-    padding: 36px 15% 0px;
+    width: 1201px;
+    padding: 36px 0px 0px;
+    min-height: 448px;
+    margin-left: auto;
+    margin-right: auto;
   }
+}
+
+.container_top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (min-width: 641px) and (max-width: 1200px) {
@@ -163,17 +155,9 @@ font-display: swap;
 }
 
 .header_button {
-  display: none;
+  display: inline-block;
   width: 30px;
   background-color: transparent;
-}
-
-@media (min-width: 641px) and (max-width: 1200px) {
-    .header_button {
-      display: inline-block;
-      width: 30px;
-      background-color: transparent;
-    }
 }
 
 .header_button_line {
@@ -361,7 +345,7 @@ font-display: swap;
 
 .now_trending_post_container {
   z-index: 2;
-  padding: 0px 15px 18px 15px;
+  padding: 15px 15px 18px 15px;
 }
 .now_trending_post1 {
   background-image: url("../images/trend1.jpg");
@@ -392,9 +376,7 @@ font-display: swap;
 }
 
 .now_trending_post_description {
-  padding-left: 16px;
-  padding-top: 32px;
-  padding-bottom: 30px;
+  padding: 32px 16px 30px;
   border: 3px solid #b59f5b;
 }
 .now_trending_post_tags {
@@ -477,9 +459,9 @@ font-display: swap;
   padding-bottom: 64px;
 }
 
-@media (min-width: 641px) and (max-width: 1200px) {
+@media (min-width: 1201px) {
   .main_posts {
-    width: 56%;
+    width: 778px;
   }
 }
 
@@ -500,6 +482,7 @@ font-display: swap;
   .main_post {
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: flex-start;
   }
 }
 
@@ -510,6 +493,8 @@ font-display: swap;
 @media (min-width: 1201px) {
   .main_post_image {
     margin-right: 30px;
+    min-width: 381px;
+    min-height: 294px;
   }
 }
 
@@ -517,13 +502,25 @@ font-display: swap;
   max-width: 381px; /* Чтобы блок с текстом не вылазил за пределы картинки */
 }
 
-  .main_post_description_tags {
+@media (min-width: 1201px) {
+  .main_post_description {
+    max-width: initial;
+  }
+}
+
+.main_post_description_tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   list-style-type: none;
   margin-top: 16px;
+}
+
+@media (min-width: 1201px) {
+  .main_post_description_tags {
+    margin-top: initial;
+  }
 }
 
 .main_post_description_tag:nth-child(n+2) {
@@ -619,7 +616,7 @@ font-display: swap;
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   color: #0f0d0e;
 }
 
@@ -743,7 +740,7 @@ font-display: swap;
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   color: #0f0d0e;
@@ -768,7 +765,6 @@ font-display: swap;
   padding-right: 20px;
   margin-bottom: 15px;
   font-size: 13px;
-  line-height: 40px;
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
   color: #000000;
@@ -788,7 +784,6 @@ font-display: swap;
   width: 100%;
   height: 48px;
   font-size: 14px;
-  line-height: 40px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
@@ -833,13 +828,13 @@ font-display: swap;
   display: flex;
   flex-wrap: wrap;
   list-style-type: none;
+  gap: 5px;
 }
 
 .sidebar_tag_link {
+  display: block;
   padding: 7px 12px;
-  margin-right: 5px;
   font-size: 12px;
-  line-height: 40px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
@@ -857,8 +852,7 @@ font-display: swap;
   position: relative;
   margin-top: 40px;
   padding-bottom: 24px;
-  font-size: 16px;
-  line-height: 29px;
+  font-size: 14px;
   font-weight: 700;
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
@@ -870,7 +864,7 @@ font-display: swap;
 .categories_title::after {
   position: absolute;
   content: "";
-  bottom: 15px;
+  bottom: 12px;
   display: block;
   width: 66px;
   left: 50%;
@@ -915,12 +909,18 @@ font-display: swap;
   color: #b59f5b;
 }
 
+@media (min-width: 1201px) {
+  .shop {
+    max-width: 1201px;
+    margin: 0 auto;
+  }
+}
+
 .our_products_title {
     position: relative;
     margin-top: 40px;
     padding-bottom: 24px;
-    font-size: 16px;
-    line-height: 29px;
+    font-size: 14px;
     font-weight: 700;
     font-family: "Open Sans", sans-serif;
     text-transform: uppercase;
@@ -995,7 +995,6 @@ font-display: swap;
   margin-top: 23px;
   margin-bottom: 14px;
   font-size: 17px;
-  line-height: 22px;
   color: #0f0d0e;
   font-weight: 700;
   font-family: "Open Sans";
@@ -1039,7 +1038,6 @@ font-display: swap;
 
 .old_price {
   font-size: 14px;
-  line-height: 24px;
   text-decoration: line-through;
   color: #0f0d0e;
   font-weight: 700;
@@ -1048,7 +1046,6 @@ font-display: swap;
 
 .price {
   font-size: 20px;
-  line-height: 24px;
   color: #0f0d0e;
   font-weight: 700;
   font-family: "Open Sans";
@@ -1058,7 +1055,6 @@ font-display: swap;
   width: 140px;
   height: 48px;
   font-size: 12px;
-  line-height: 40px;
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 700;
@@ -1076,13 +1072,13 @@ font-display: swap;
   justify-content: center;
   align-items: center;
   margin-bottom: 73px;
+  padding: 27px 0px;
   background-color: #f4f7f6;
   }
 
 .social_list {
    display: flex;
    flex-wrap: wrap;
-   margin: 27px 0px;
    list-style-type: none;
  }
 
@@ -1152,6 +1148,12 @@ font-display: swap;
   background-color: #fff;
   overflow:auto;
   z-index: 5;
+}
+
+@media (min-width: 641px) {
+  .popap_container {
+    min-width: 450px;
+  }
 }
 
 .popap_close_button {
@@ -1263,7 +1265,7 @@ font-display: swap;
   opacity: 1;
 }
 
-.popap_text_input {
+.popap_textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;

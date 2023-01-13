@@ -9,11 +9,6 @@
 
   <body>
     <header class="header">
-      <button class="mobile_header_button">
-        <span class="header_button_line"></span>
-        <span class="header_button_line"></span>
-        <span class="header_button_line"></span>
-      </button>
       <div class="container_header">
         <div class="container_top">
           <button class="header_button">
@@ -121,7 +116,7 @@
       </div>
     </section>
     <section class="common_content">
-      <section class="main_posts">
+      <main class="main_posts">
         <article class="main_post">
           <div class="main_post_image">
             <img src="images/last-post1.jpg" alt="Beach">
@@ -237,8 +232,8 @@
             <p class="main_post_content">Подушки для дивана целесообразнее заказать в съемных чехлах на молнии, если потребуется чистка подушек, проще снять чехлы, чем везти подушку в химчистку.</p>
           </div>
         </article>
-      </section>
-      <section class="sidebar">
+      </main>
+      <aside class="sidebar">
         <section class="latest_posts">
           <h2 class="latest_posts_title">новые посты</h2>
           <article class="latest_post">
@@ -297,9 +292,13 @@
             </div>
           </article>
           <form class="search" action="#">
+            <label for="">
               <span class="visually_hidden">Search field</span>
               <input type="text" placeholder="Найти..." class="search_text_input">
-              <button class="button_search" type="submit"></button>
+            </label>
+            <button class="button_search" type="submit">
+                <span class="visually_hidden">Search button</span>
+            </button>
           </form>
         </section>
         <section class="subscribe">
@@ -380,7 +379,7 @@
             </li>
           </ul>
         </section>
-      </section>
+      </aside>
     </section>
     <section class="shop">
       <h2 class="our_products_title">наши изделия</h2>
@@ -473,7 +472,6 @@
               <option value="">Вариант 1</option>
               <option value="">Вариант 2</option>
             </select>
-            <button class="popap_container_form_question_button" type=></button>
             <p class="popap_container_form_text">Вы подписаны на e-mail рассылку?</p>
             <label for="yes">
               <input id="yes" class="popap_radio" type="radio" name="subscription" value="yes">
@@ -486,8 +484,11 @@
               <span class="text_radio">Нет</span>
             </label>
             <p class="popap_container_form_text">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</p>
-            <input class="popap_text_input" type="text" placeholder="Mожет, больше рецептов?" name="" value="">
-            <button class="popap_button_submit" type="submit" name="button_submit">отправить</button>
+            <textarea class="popap_textarea">"Mожет, больше рецептов?"</textarea>
+            <button class="popap_button_submit" type="submit" name="button_submit">
+              <span class="visually_hidden">Submit button</span>
+              отправить
+            </button>
           </form>
         </div>
       </div>
