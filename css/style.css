@@ -119,12 +119,6 @@ font-display: swap;
   }
 }
 
-.container_top {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 @media (min-width: 641px) and (max-width: 1200px) {
   .container_top {
     display: flex;
@@ -158,6 +152,12 @@ font-display: swap;
   display: inline-block;
   width: 30px;
   background-color: transparent;
+}
+
+@media (min-width: 1201px) {
+  .header_button {
+    display: none;
+  }
 }
 
 .header_button_line {
